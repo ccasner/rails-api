@@ -15,10 +15,10 @@ class ChargesController < ProtectedController
 
   # POST /charges
   def create
-    @charge = current_user.charges.new(charge_params)
+    @charge = current_user.charges.build(charge_params)
 
     if @charge.save
-      render json: @charge, status: :created, location: @charge
+      render json: @charge, status: :created
     else
       render json: @charge.errors, status: :unprocessable_entity
     end
