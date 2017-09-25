@@ -1,9 +1,9 @@
-class ChargesController < ApplicationController
+class ChargesController < ProtectedController
   before_action :set_charge, only: [:show, :update, :destroy]
 
   # GET /charges
   def index
-    @charges = Charge.all
+    @charges = current_user.charges.all
 
     render json: @charges
   end
@@ -15,7 +15,7 @@ class ChargesController < ApplicationController
 
   # POST /charges
   def create
-    @charge = Charge.new(charge_params)
+    @charge = current_user.charges.new(charge_params)
 
     if @charge.save
       render json: @charge, status: :created, location: @charge
@@ -41,7 +41,7 @@ class ChargesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_charge
-      @charge = Charge.find(params[:id])
+      @charge = current_user.charges.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
