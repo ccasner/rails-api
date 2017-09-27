@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#TOKEN=BAhJIiUzMmFhZGNhZjk5NTIyYTI3ZDM4MzJjN2I1ZmIyYzM4NwY6BkVG--456aa73cbc0d9515913b481302dbae42f22394f3 sh scripts/charges/get-all-charges.sh
+#TOKEN=BAhJIiU3MDY3Y2RhZDY4MjE5ZjBiYTIzNWFjMzJjMWRjMzczNgY6BkVG--add6b2ad1c0de3f09d42327137398961af6e7eb0 sh scripts/charges/get-all-charges.sh
 
 
 API="${API_ORIGIN:-http://localhost:4741}"
