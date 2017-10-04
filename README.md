@@ -15,7 +15,7 @@ A MA visitor who wants to know how much their trip will cost.
 An employee looking to report travel expenses for a specific day of travel.
 
 
-## What the back-end needs:
+## What the back-end needs
 
 A resource for the tolls which will include price and exit name.
 A resource for users to store login information.
@@ -24,6 +24,15 @@ A resource for the user's charge history.
 ## Entity Relationship Diagram
 
 [link to ERD](https://imgur.com/a/cv0qf)
+
+## Development Process
+
+I started building the API by scaffolding the 'Charges' resource so that each user would be able to create their own table to track the tolls they paid. I restricted the access to the user that owns the table by setting a belongs to/has many relationship. Each table would be empty by default with the option to add charges if desired. I created a one-to-many relationship by adding the user ID to the charges resource.
+
+I then created a 'Tolls' resource where I loaded all the information about each exit location and price. I used a seed file to add the data to the tolls resource and made it available for users to read the information but it could only be updated by those with access to the database.
+
+Once the restrictions were set, I was ready to move on to the front-end development.
+
 
 ## Routing
 
